@@ -1,0 +1,16 @@
+config:
+  train_file_path: movie_review_train.csv 
+  test_file_path : movie_review_test.csv 
+  review_col_name: 'review'
+  sentiment_col_name: 'sentiment'
+  pca: 0.80
+  languaje: 'english'
+  AdaboostClassifier:
+    num_stumps: 10
+    criterion: 'entropy'
+    stump_depth: 1
+    TuneHyperparams:
+      num_stumps: [10,20,30]
+      stump_depth: [1,2,3]
+      KFold_n_splits : 4
+      
