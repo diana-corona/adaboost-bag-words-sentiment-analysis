@@ -1,11 +1,18 @@
 config:
   train_file_path: movie_review_train.csv 
+  # File to train 
   test_file_path : movie_review_test.csv 
+  # File to test 
   results_file_path : results_movie_review_test.csv 
+  # File to save prediction 
   review_col_name: 'review'
+  # Review column name in file 
   sentiment_col_name: 'sentiment'
+  # Sentiment column name in file , sentiments should be positive or negative
   pca: 0.80
+  # PCA to reduce bag of words
   languaje: 'english'
+  # languaje of reviews
   AdaboostClassifier:
     num_stumps: 10
     criterion: 'entropy'
