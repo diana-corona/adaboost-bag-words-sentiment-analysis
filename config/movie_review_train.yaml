@@ -1,6 +1,7 @@
 config:
   train_file_path: movie_review_train.csv 
   test_file_path : movie_review_test.csv 
+  results_file_path : results_movie_review_test.csv 
   review_col_name: 'review'
   sentiment_col_name: 'sentiment'
   pca: 0.80
