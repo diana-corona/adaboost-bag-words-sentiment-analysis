@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     #parser.add_argument("--file", required=True, help="path to text file to process")
     parser.add_argument("--config", required=True, help="path to config")
-    parser.add_argument("--mode", default="train", choices=["tuneHyperparams","train", "predict","trainAndPredict"])
+    parser.add_argument("--mode", default="train", choices=["tuneHyperparams","trainAndPredict"])
 
     opt = parser.parse_args()
     with open(opt.config) as f:
@@ -26,18 +26,9 @@ if __name__ == "__main__":
         config = config['config']
 
     boostingClassifier = None
-    if opt.mode == 'train':
-        print("Training...")
+    if opt.mode == 'trainAndPredict':
+        print("Train And Predict...")
         boostingClassifier = train(config)
     elif opt.mode == 'tuneHyperparams':
         print("Tune hyperparams...")
         tune(config)
-    elif opt.mode == 'predict':
-        print("Predict...")
-        if boostingClassifier == None:
-            print("First train the model")
-        else:
-            predict(config,boostingClassifier)
-    elif opt.mode == 'trainAndPredict':
-        print("Train And Predict...")
-        train_and_predict(config)

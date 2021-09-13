@@ -13,7 +13,7 @@ from nltk.stem import SnowballStemmer
 from nltk.stem import WordNetLemmatizer
 
 def extract_bag_of_words(review_file,config):
-    xy =pd.read_csv(review_file)
+    xy = pd.read_csv(review_file)
     x_original = xy[config['review_col_name']]
     x_filtered = []
     x = []
